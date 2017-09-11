@@ -1,1 +1,1 @@
-# gr-verilator
+Verilog to GNURadio converter using Verilator
