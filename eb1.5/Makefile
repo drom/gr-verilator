@@ -7,5 +7,8 @@ default: verilate compile
 verilate:
 	$(VERILATOR_ROOT)/bin/verilator $(VERILATOR_FLAGS)
 
+lint:
+	$(VERILATOR_ROOT)/bin/verilator --lint-only $(VERILATOR_FLAGS)
+
 compile:
 	make -j -C obj_dir/ -f Veb1_5.mk Veb1_5
