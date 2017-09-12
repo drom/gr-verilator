@@ -19,7 +19,7 @@ private:
   int i, len, val;
   randomizer rrr;
 public:
-  tx(int _len) : len(_len), i(0), rrr(42) {}
+  tx(int _len) : len(_len), i(0), rrr(42), val(0) {}
   int operator () (bool ack) {
     if (ack && i < len) {
       i++;
@@ -31,14 +31,15 @@ public:
 
 class rx {
 private:
-  int val;
+  int val, res;
   randomizer rrr;
 public:
-  rx() : rrr(42) {}
+  rx() : val(0), rrr(42) {}
   bool operator () (int dat) {
-    val = rrr() & 0xff;
     std::cout << "got: " << dat << ", expected: " << val << '\n';
-    return val != dat;
+    res = val != dat;
+    val = rrr() & 0xff;
+    return res;
   }
 };
 
@@ -75,17 +76,19 @@ int main(int argc, char **argv, char **env) {
             top->eval ();
         }
 
-        top->t_req = top->reset_n ? ((tx1r() & 0x800) != 0) : 0;
-
         if (top->t_req) {
           top->t_dat = tx1(top->reset_n && top->i_ack);
         }
 
+        if (top->reset_n && top->i_req && top->i_ack) {
+          if (rx1(top->i_dat)) {
+            std::cout << i << " error" << '\n';
+          }
+        }
+
+        top->t_req = top->reset_n ? ((tx1r() & 0x800) != 0) : 0;
         top->i_ack = top->reset_n ? ((rx1r() & 0x800) != 0) : 0;
 
-        if (top->reset_n && top->i_req && top->i_ack && rx1(top->i_dat)) {
-          std::cout << i << " error" << '\n';
-        }
         if (Verilated::gotFinish()) exit(0);
     }
     tfp->close();
