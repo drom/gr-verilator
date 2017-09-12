@@ -1,0 +1,52 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Tue Sep 12 02:06:05 2017
+[*]
+[dumpfile] "/home/drom/work/github/drom/gr-verilator/eb1.5/tb.vcd"
+[dumpfile_mtime] "Tue Sep 12 02:04:39 2017"
+[dumpfile_size] 2358
+[savefile] "/home/drom/work/github/drom/gr-verilator/eb1.5/tb.gtkw"
+[timestart] 0
+[size] 3770 2119
+[pos] -1 -1
+*-3.427110 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[sst_width] 273
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 666
+@200
+-
+@28
+TOP.eb.clk
+TOP.eb.reset_n
+@24
+TOP.eb.state[2:0]
+@200
+-
+@24
+TOP.eb.t_dat[31:0]
+@28
+TOP.eb.t_req
+TOP.eb.t_ack
+@200
+-
+@25
+TOP.eb.i_dat[31:0]
+@28
+TOP.eb.i_req
+TOP.eb.i_ack
+@200
+-
+@25
+TOP.eb.dat0[31:0]
+TOP.eb.dat1[31:0]
+@28
+TOP.eb.en0
+TOP.eb.en1
+@25
+TOP.eb.nxt_state[2:0]
+@28
+TOP.eb.sel
+[pattern_trace] 1
+[pattern_trace] 0
