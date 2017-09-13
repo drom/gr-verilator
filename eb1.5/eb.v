@@ -14,7 +14,9 @@ module eb #(
 
   output [W-1:0] i_dat,
   output         i_req,
-  input          i_ack
+  input          i_ack,
+
+  output   [2:0] stt
 );
 
 // -------------------------------------------------------------------
@@ -66,5 +68,7 @@ always @(posedge clk) if(en0) dat0 <= t_dat;
 always @(posedge clk) if(en1) dat1 <= t_dat;
 
 assign i_dat = sel ? dat1 : dat0;
+
+assign stt = state;
 
 endmodule
