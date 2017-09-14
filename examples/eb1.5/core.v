@@ -1,4 +1,4 @@
-module eb #(
+module core #(
   parameter W = 32,
   parameter S0 = 3'b000,
 	parameter S1 = 3'b001,

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<block>
+  <name>siso_cc</name>
+  <key>verilator_siso_cc</key>
+  <category>[verilator]</category>
+  <import>import verilator</import>
+  <make>verilator.siso_cc()</make>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

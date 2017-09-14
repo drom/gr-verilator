@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Veb.h"
+#include "Vcore.h"
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 
@@ -88,7 +88,7 @@ int main(int argc, char **argv, char **env) {
 
     Verilated::commandArgs(argc, argv);
     // init top verilog instance
-    Veb* top = new Veb;
+    Vcore* top = new Vcore;
     // init trace dump
     Verilated::traceEverOn(true);
     VerilatedVcdC* tfp = new VerilatedVcdC;
