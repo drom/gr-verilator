@@ -24,6 +24,7 @@
 
 #include <gnuradio/io_signature.h>
 #include "siso_cc_impl.h"
+// #include "Vcore.h"
 
 namespace gr {
   namespace verilator {

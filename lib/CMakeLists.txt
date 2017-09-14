@@ -22,7 +22,7 @@
 ########################################################################
 include(GrPlatform) #define LIB_SUFFIX
 
-include_directories(${Boost_INCLUDE_DIR})
+include_directories(${Boost_INCLUDE_DIR} ${VERILATOR_ROOT})
 link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND verilator_sources
@@ -80,4 +80,3 @@ GR_ADD_TEST(test_verilator test-verilator)
 ########################################################################
 message(STATUS "Using install prefix: ${CMAKE_INSTALL_PREFIX}")
 message(STATUS "Building for version: ${VERSION} / ${LIBVER}")
-
